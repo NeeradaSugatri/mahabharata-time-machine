@@ -33,25 +33,31 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-
-/* ---------- Navigation ---------- */
+/* ========================================
+   NAVIGATION
+   ======================================== */
 
 .navbar {
     width: 100%;
-    min-height: 72px;
+    min-height: 78px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 14px 6%;
+    padding: 14px 5%;
 
-    background: rgba(20, 14, 10, 0.96);
-    border-bottom: 1px solid #80612f;
+    background: rgba(14, 10, 7, 0.98);
+    border-bottom: 1px solid rgba(180, 140, 65, 0.45);
 
     position: relative;
     z-index: 100;
+
+    box-sizing: border-box;
 }
+
+
+/* ---------- Logo ---------- */
 
 .logo {
     color: #d9b56d;
@@ -59,35 +65,107 @@ a {
     font-weight: bold;
     letter-spacing: 2px;
     line-height: 1.1;
+
+    flex-shrink: 0;
 }
 
-.logo span {
+/* Supports both old and new page markup */
+.logo span,
+.logo small {
     display: block;
+}
+
+.logo small {
     color: #f1dfb7;
     font-size: 0.65rem;
     letter-spacing: 4px;
     margin-top: 3px;
 }
 
-.navbar nav {
+
+/* ---------- Navigation Links ---------- */
+
+/*
+   Home/Timeline currently use:
+       <nav>...</nav>
+
+   Map/Characters use:
+       <div class="nav-links">...</div>
+
+   Support BOTH so one page does not break another.
+*/
+
+.navbar nav,
+.navbar .nav-links {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
     gap: 22px;
 }
 
-.navbar nav a {
+
+/* Navigation link styling */
+
+.navbar nav a,
+.navbar .nav-links a {
+    position: relative;
+
     color: #ead9b7;
     font-size: 0.9rem;
-    transition: color 0.25s ease;
+    font-weight: 500;
+
+    padding: 8px 0;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
+
+/* Gold underline */
+
+.navbar nav a::after,
+.navbar .nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #d9b56d;
+
+    transition: width 0.25s ease;
+}
+
+
+/* Hover + active */
+
 .navbar nav a:hover,
-.navbar nav a.active {
+.navbar nav a.active,
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
     color: #d9b56d;
 }
 
 
-/* ---------- Buttons ---------- */
+.navbar nav a:hover::after,
+.navbar nav a.active::after,
+.navbar .nav-links a:hover::after,
+.navbar .nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   BUTTONS
+   ======================================== */
 
 .btn {
     display: inline-flex;
@@ -132,7 +210,9 @@ a {
 }
 
 
-/* ---------- Shared Sections ---------- */
+/* ========================================
+   SHARED SECTIONS
+   ======================================== */
 
 section {
     width: 100%;
@@ -140,7 +220,9 @@ section {
 
 .section-heading {
     max-width: 720px;
+
     margin: 0 auto 45px;
+
     text-align: center;
 }
 
@@ -151,13 +233,16 @@ section {
 
     font-size: 0.75rem;
     font-weight: bold;
+
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
 .section-heading h2 {
     color: #f2dfb9;
+
     font-size: clamp(2rem, 4vw, 3rem);
+
     margin-bottom: 10px;
 }
 
@@ -166,32 +251,44 @@ section {
 }
 
 
-/* ---------- Footer ---------- */
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer {
     padding: 25px 6%;
 
     background: #0f0b08;
+
     border-top: 1px solid #59431f;
 
     text-align: center;
+
     color: #9d8c72;
+
     font-size: 0.85rem;
 }
 
 
-/* ---------- Responsive Navigation ---------- */
+/* ========================================
+   RESPONSIVE NAVIGATION
+   ======================================== */
 
 @media (max-width: 900px) {
 
     .navbar {
         flex-direction: column;
+
         gap: 15px;
+
+        padding: 16px 5%;
     }
 
-    .navbar nav {
+    .navbar .nav-links {
         flex-wrap: wrap;
+
         justify-content: center;
+
         gap: 12px 18px;
     }
 }
@@ -199,13 +296,15 @@ footer {
 
 @media (max-width: 600px) {
 
-    .navbar {
-        padding: 15px 4%;
-    }
+    .navbar nav,
+    .navbar .nav-links {
+    gap: 10px 15px;
+}
 
-    .navbar nav a {
-        font-size: 0.8rem;
-    }
+    .navbar nav a,
+    .navbar .nav-links a {
+    font-size: 0.8rem;
+}
 
     .btn {
         width: 100%;
