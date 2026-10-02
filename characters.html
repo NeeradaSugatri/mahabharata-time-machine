@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Characters | Mahabharata Time Machine</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/characters.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            MAHABHARATA
+            <span>TIME MACHINE</span>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="map.html">Map</a>
+            <a href="characters.html" class="active">Characters</a>
+            <a href="missions.html">Missions</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CHARACTERS PAGE -->
+
+    <main class="characters-page">
+
+        <section class="characters-hero">
+
+            <p class="eyebrow">
+                THE PEOPLE OF THE EPIC
+            </p>
+
+            <h1>
+                Characters
+            </h1>
+
+            <p>
+                Meet the people whose choices, relationships and
+                struggles shape the story of the Mahabharata.
+            </p>
+
+        </section>
+
+
+        <!-- FILTERS -->
+
+        <section class="character-explorer">
+
+            <div class="character-heading">
+
+                <div>
+                    <p class="eyebrow">
+                        CHARACTER ARCHIVE
+                    </p>
+
+                    <h2>
+                        Choose a Character
+                    </h2>
+                </div>
+
+                <div class="character-filters">
+
+                    <button
+                        class="filter-btn active"
+                        data-group="all">
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-group="pandava">
+                        Pandavas
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-group="kaurava">
+                        Kauravas
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-group="kuru">
+                        Kuru
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-group="ally">
+                        Allies
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-group="panchala">
+                        Panchala
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHARACTER CARDS -->
+
+            <div
+                id="character-grid"
+                class="character-grid">
+
+                <!-- JavaScript will create cards here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- CHARACTER DETAILS -->
+
+        <section
+            id="character-details"
+            class="character-details hidden">
+
+            <button
+                id="close-character"
+                class="close-character">
+                ×
+            </button>
+
+            <div class="character-detail-content">
+
+                <div class="character-portrait">
+
+                    <img
+                        id="character-image"
+                        src=""
+                        alt="Character portrait">
+
+                </div>
+
+
+                <div class="character-information">
+
+                    <p
+                        id="character-group"
+                        class="eyebrow">
+                    </p>
+
+                    <h2 id="character-name">
+                    </h2>
+
+                    <h3 id="character-role">
+                    </h3>
+
+                    <p
+                        id="character-description">
+                    </p>
+
+
+                    <div class="detail-block">
+
+                        <h4>
+                            Connected Characters
+                        </h4>
+
+                        <div
+                            id="character-relationships"
+                            class="relationship-list">
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-block">
+
+                        <h4>
+                            Important Events
+                        </h4>
+
+                        <div
+                            id="character-events"
+                            class="event-list">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Mahabharata Time Machine • An Interactive Learning Experience
+        </p>
+
+    </footer>
+
+
+    <script src="js/data/characters.js"></script>
+    <script src="js/characters.js"></script>
+
+</body>
+
+</html>
