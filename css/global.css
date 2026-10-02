@@ -1,0 +1,213 @@
+/* ========================================
+   MAHABHARATA TIME MACHINE
+   Global Styles
+   ======================================== */
+
+/* ---------- Base ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #17110d;
+    color: #f4e4c1;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+    width: 100%;
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 6%;
+
+    background: rgba(20, 14, 10, 0.96);
+    border-bottom: 1px solid #80612f;
+
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    color: #d9b56d;
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.logo span {
+    display: block;
+    color: #f1dfb7;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    margin-top: 3px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navbar nav a {
+    color: #ead9b7;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #d9b56d;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 25px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: #8d3f1f;
+    border: 1px solid #c58a4a;
+    color: #fff0d0;
+}
+
+.btn-primary:hover {
+    background: #a64d27;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #9b7a43;
+    color: #f0ddb5;
+}
+
+.btn-secondary:hover {
+    background: rgba(155, 122, 67, 0.15);
+}
+
+
+/* ---------- Shared Sections ---------- */
+
+section {
+    width: 100%;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+
+    color: #c79b52;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    color: #f2dfb9;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.section-heading p:last-child {
+    color: #bca98a;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    padding: 25px 6%;
+
+    background: #0f0b08;
+    border-top: 1px solid #59431f;
+
+    text-align: center;
+    color: #9d8c72;
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Responsive Navigation ---------- */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .navbar nav a {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,589 @@
+/* ========================================
+   MAHABHARATA TIME MACHINE
+   HOME PAGE
+   ======================================== */
+
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 6%;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(18, 10, 5, 0.18),
+            rgba(18, 10, 5, 0.48)
+        ),
+        url("../assets/backgrounds/home-hero.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-bottom: 1px solid #9a7138;
+}
+
+
+/* Subtle dark layer behind the text */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(30, 14, 5, 0.05) 0%,
+            rgba(15, 8, 4, 0.48) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+
+    padding: 40px 20px;
+}
+
+
+/* Small heading */
+
+.hero .eyebrow {
+    margin-bottom: 18px;
+
+    color: #f1d18c;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+
+/* Main title */
+
+.hero h1 {
+    margin: 0 0 22px;
+
+    color: #f3ca79;
+
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+
+    line-height: 0.9;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 3px 2px #3b1c08,
+        0 8px 25px rgba(0, 0, 0, 0.75);
+}
+
+
+/* TIME MACHINE */
+
+.hero h1 span {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #fff0cb;
+
+    font-size: 0.42em;
+
+    letter-spacing: 9px;
+
+    line-height: 1;
+}
+
+
+/* Description */
+
+.hero-description {
+    max-width: 650px;
+
+    margin: 0 auto 32px;
+
+    color: #fff0d0;
+
+    font-size: 1.05rem;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+
+/* Hero button */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.hero .btn-primary {
+    min-width: 210px;
+
+    padding: 15px 30px;
+
+    background:
+        linear-gradient(
+            #a84e25,
+            #702b14
+        );
+
+    border: 1px solid #e3b35e;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.45);
+
+    font-size: 1rem;
+
+    letter-spacing: 1px;
+}
+
+.hero .btn-primary:hover {
+    background:
+        linear-gradient(
+            #c26130,
+            #863517
+        );
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+/* ========================================
+   HOW IT WORKS
+   ======================================== */
+
+.how-to-play {
+    position: relative;
+
+    padding: 85px 6%;
+
+    background:
+        linear-gradient(
+            rgba(72, 48, 25, 0.86),
+            rgba(37, 24, 14, 0.96)
+        );
+
+    border-top: 1px solid #9b7139;
+    border-bottom: 1px solid #6c4c25;
+
+    overflow: hidden;
+}
+
+
+/* Decorative parchment glow */
+
+.how-to-play::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 250px;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(214, 166, 83, 0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Heading */
+
+.how-to-play .section-heading {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom: 45px;
+}
+
+.how-to-play .section-heading h2 {
+    color: #f0d19a;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+
+/* Steps */
+
+.steps {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* Individual step */
+
+.step {
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 28px 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(54, 36, 21, 0.95),
+            rgba(30, 20, 13, 0.95)
+        );
+
+    border: 1px solid #806033;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+
+    border-color: #c69a54;
+}
+
+
+/* Number */
+
+.step span {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #d6aa60;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* Step title */
+
+.step h3 {
+    margin-bottom: 10px;
+
+    color: #efd19a;
+
+    font-size: 1.35rem;
+}
+
+
+/* Step description */
+
+.step p {
+    color: #bca889;
+
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+    .hero h1 {
+        font-size: clamp(3rem, 9vw, 6rem);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 60px 5%;
+
+        background-position: 42% center;
+    }
+
+    .hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding: 30px 20px;
+}
+
+    .hero .eyebrow {
+        font-size: 0.7rem;
+
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+    margin: 0 0 20px;
+
+    color: #f3ca79;
+
+    font-size: clamp(3rem, 5.8vw, 5.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 3px 2px #3b1c08,
+        0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+    .hero h1 span {
+        margin-top: 12px;
+
+        font-size: 0.42em;
+
+        letter-spacing: 4px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero .btn-primary {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        min-height: auto;
+    }
+}
+
+/* ========================================
+   JOURNEY PATH
+   ======================================== */
+
+.journey-path {
+    position: relative;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: stretch;
+
+    justify-content: center;
+
+    gap: 0;
+}
+
+
+/* Individual journey item */
+
+.journey-step {
+    flex: 1;
+
+    min-height: 190px;
+
+    padding: 28px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(69, 45, 25, 0.92),
+            rgba(34, 23, 15, 0.96)
+        );
+
+    border: 1px solid #876535;
+
+    position: relative;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.journey-step:hover {
+    transform: translateY(-5px);
+
+    border-color: #d0a65e;
+}
+
+
+/* Roman numeral */
+
+.journey-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #b2874a;
+
+    border-radius: 50%;
+
+    color: #e0bb72;
+
+    font-size: 0.85rem;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* Title */
+
+.journey-content h3 {
+    margin-bottom: 9px;
+
+    color: #efd19a;
+
+    font-size: 1.35rem;
+}
+
+
+/* Description */
+
+.journey-content p {
+    color: #bda98a;
+
+    font-size: 0.88rem;
+
+    line-height: 1.65;
+}
+
+
+/* Connector */
+
+.journey-line {
+    width: 32px;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+
+/* Small gold connector in the middle */
+
+.journey-line::after {
+    content: "→";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #c79a52;
+
+    font-size: 1.2rem;
+}
+
+
+/* ========================================
+   JOURNEY RESPONSIVE
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .journey-path {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 18px;
+    }
+
+    .journey-line {
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .journey-path {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-step {
+        min-height: auto;
+    }
+}
