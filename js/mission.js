@@ -3,60 +3,99 @@ const params =
         window.location.search
     );
 
+
 const eventId =
     params.get("event");
 
 
 const selectedMission =
     missions.find(
-        mission => mission.eventId === eventId
+        mission =>
+            mission.eventId === eventId
     );
 
+
+/* =========================
+   ELEMENTS
+========================= */
 
 const missionTitle =
     document.getElementById(
         "mission-title"
     );
 
+
 const missionSubtitle =
     document.getElementById(
         "mission-subtitle"
     );
+
 
 const sceneVisual =
     document.getElementById(
         "scene-visual"
     );
 
+
+const characterStage =
+    document.getElementById(
+        "character-stage"
+    );
+
+
+const characterDialogue =
+    document.getElementById(
+        "character-dialogue"
+    );
+
+
 const dialogueSpeaker =
     document.getElementById(
         "dialogue-speaker"
     );
+
 
 const dialogueText =
     document.getElementById(
         "dialogue-text"
     );
 
+
+const narratorPanel =
+    document.getElementById(
+        "narrator-panel"
+    );
+
+
+const narratorText =
+    document.getElementById(
+        "narrator-text"
+    );
+
+
 const sceneCounter =
     document.getElementById(
         "scene-counter"
     );
+
 
 const nextButton =
     document.getElementById(
         "next-button"
     );
 
+
 const storyComplete =
     document.getElementById(
         "story-complete"
     );
 
+
 const completionText =
     document.getElementById(
         "completion-text"
     );
+
 
 const quizButton =
     document.getElementById(
@@ -64,8 +103,347 @@ const quizButton =
     );
 
 
+/* =========================
+   STORY STATE
+========================= */
+
 let currentSceneIndex = 0;
 
+let typingTimer = null;
+
+let isTyping = false;
+
+let currentText = "";
+
+let currentCharacterIndex = 0;
+
+
+/* =========================
+   TYPEWRITER
+========================= */
+
+function startTyping(
+    element,
+    text
+) {
+
+    clearInterval(
+        typingTimer
+    );
+
+
+    currentText =
+        text;
+
+
+    currentCharacterIndex =
+        0;
+
+
+    isTyping =
+        true;
+
+
+    element.textContent =
+        "";
+
+
+    typingTimer =
+        setInterval(
+            function () {
+
+                element.textContent +=
+                    currentText[
+                        currentCharacterIndex
+                    ];
+
+
+                currentCharacterIndex +=
+                    1;
+
+
+                if (
+                    currentCharacterIndex >=
+                    currentText.length
+                ) {
+
+                    finishTyping(
+                        element
+                    );
+
+                }
+
+            },
+            25
+        );
+}
+
+
+/* =========================
+   FINISH TYPING
+========================= */
+
+function finishTyping(
+    element
+) {
+
+    clearInterval(
+        typingTimer
+    );
+
+
+    typingTimer =
+        null;
+
+
+    element.textContent =
+        currentText;
+
+
+    currentCharacterIndex =
+        currentText.length;
+
+
+    isTyping =
+        false;
+}
+
+
+/* =========================
+   DISPLAY CHARACTER
+========================= */
+
+function displayCharacter(
+    character
+) {
+
+    characterStage.innerHTML =
+        "";
+
+
+    if (!character) {
+        return;
+    }
+
+
+    const imagePath =
+        `/assets/interaction/characters/${character}.png`;
+
+
+    const characterImage =
+        document.createElement(
+            "img"
+        );
+
+
+    characterImage.className =
+        "story-character-image";
+
+
+    characterImage.src =
+        imagePath;
+
+
+    characterImage.alt =
+        character
+            .replaceAll(
+                "-",
+                " "
+            )
+            .replace(
+                /\b\w/g,
+                letter =>
+                    letter.toUpperCase()
+            );
+
+
+    /*
+     * If the image cannot be found,
+     * show a fallback placeholder.
+     */
+
+    characterImage.onerror =
+        function () {
+
+            characterStage.innerHTML =
+                "";
+
+
+            const fallback =
+                document.createElement(
+                    "div"
+                );
+
+
+            fallback.className =
+                "character-placeholder";
+
+
+            fallback.textContent =
+                character
+                    .replaceAll(
+                        "-",
+                        " "
+                    )
+                    .replace(
+                        /\b\w/g,
+                        letter =>
+                            letter.toUpperCase()
+                    );
+
+
+            characterStage.appendChild(
+                fallback
+            );
+        };
+
+
+    characterStage.appendChild(
+        characterImage
+    );
+}
+
+
+/* =========================
+   DISPLAY BACKGROUND
+========================= */
+
+function displayBackground(
+    scene
+) {
+
+    if (
+        scene.background
+    ) {
+
+        const backgroundPath =
+            `/assets/interaction/backgrounds/${scene.background}.png`;
+
+
+        sceneVisual.style.backgroundImage =
+            `url("${backgroundPath}")`;
+
+
+        sceneVisual.style.backgroundSize =
+            "cover";
+
+
+        sceneVisual.style.backgroundPosition =
+            "center";
+
+
+        sceneVisual.style.backgroundRepeat =
+            "no-repeat";
+
+
+        sceneVisual.classList.add(
+            "has-background"
+        );
+
+    } else {
+
+        sceneVisual.style.backgroundImage =
+            "";
+
+
+        sceneVisual.classList.remove(
+            "has-background"
+        );
+    }
+}
+
+
+/* =========================
+   CHARACTER DIALOGUE SCENE
+========================= */
+
+function displayCharacterScene(
+    scene
+) {
+
+    /*
+     * Tell CSS which character
+     * is currently speaking.
+     *
+     * Example:
+     *
+     * data-character="shakuni"
+     *
+     * CSS will then use the
+     * Shakuni-specific bubble
+     * position.
+     */
+
+    sceneVisual.dataset.character =
+        scene.character;
+
+
+    characterStage.style.display =
+        "flex";
+
+
+    characterDialogue.style.display =
+        "block";
+
+
+    narratorPanel.style.display =
+        "none";
+
+
+    displayCharacter(
+        scene.character
+    );
+
+
+    dialogueSpeaker.textContent =
+        scene.speaker;
+
+
+    startTyping(
+        dialogueText,
+        scene.text
+    );
+}
+
+
+/* =========================
+   NARRATOR SCENE
+========================= */
+
+function displayNarratorScene(
+    scene
+) {
+
+    /*
+     * Remove the character
+     * positioning information.
+     */
+
+    delete sceneVisual.dataset.character;
+
+
+    characterStage.style.display =
+        "none";
+
+
+    characterDialogue.style.display =
+        "none";
+
+
+    narratorPanel.style.display =
+        "block";
+
+
+    startTyping(
+        narratorText,
+        scene.text
+    );
+}
+
+
+/* =========================
+   DISPLAY SCENE
+========================= */
 
 function displayScene() {
 
@@ -74,17 +452,30 @@ function displayScene() {
         missionTitle.textContent =
             "Story Not Found";
 
+
         missionSubtitle.textContent =
             "We could not find this story.";
 
-        dialogueSpeaker.textContent =
-            "Narrator";
 
-        dialogueText.textContent =
+        characterStage.style.display =
+            "none";
+
+
+        characterDialogue.style.display =
+            "none";
+
+
+        narratorPanel.style.display =
+            "block";
+
+
+        narratorText.textContent =
             "Please return to the event page and try again.";
+
 
         nextButton.style.display =
             "none";
+
 
         return;
     }
@@ -95,24 +486,35 @@ function displayScene() {
 
 
     const currentScene =
-        scenes[currentSceneIndex];
+        scenes[
+            currentSceneIndex
+        ];
 
 
-    sceneVisual.textContent =
-        currentScene.visual;
+    /*
+     * Background
+     */
+
+    displayBackground(
+        currentScene
+    );
 
 
-    dialogueSpeaker.textContent =
-        currentScene.speaker;
-
-
-    dialogueText.textContent =
-        currentScene.text;
-
+    /*
+     * Scene counter
+     */
 
     sceneCounter.textContent =
-        `Scene ${currentSceneIndex + 1} / ${scenes.length}`;
+        `Scene ${
+            currentSceneIndex + 1
+        } / ${
+            scenes.length
+        }`;
 
+
+    /*
+     * Button text
+     */
 
     if (
         currentSceneIndex ===
@@ -126,16 +528,49 @@ function displayScene() {
 
         nextButton.textContent =
             "Next →";
-
     }
 
+
+    /*
+     * Choose between
+     * narrator and character.
+     */
+
+    if (
+        currentScene.type ===
+        "dialogue"
+    ) {
+
+        displayCharacterScene(
+            currentScene
+        );
+
+    } else {
+
+        displayNarratorScene(
+            currentScene
+        );
+    }
 }
 
 
+/* =========================
+   COMPLETE STORY
+========================= */
+
 function completeStory() {
 
-    const scenes =
-        selectedMission.scenes;
+    clearInterval(
+        typingTimer
+    );
+
+
+    typingTimer =
+        null;
+
+
+    isTyping =
+        false;
 
 
     storyComplete.hidden =
@@ -155,16 +590,19 @@ function completeStory() {
 
 
     sceneCounter.textContent =
-        `${scenes.length} / ${scenes.length}`;
+        `${selectedMission.scenes.length} / ${selectedMission.scenes.length}`;
 
 
     storyComplete.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
-
 }
 
+
+/* =========================
+   NEXT BUTTON
+========================= */
 
 nextButton.addEventListener(
     "click",
@@ -174,6 +612,44 @@ nextButton.addEventListener(
             return;
         }
 
+
+        /*
+         * If text is still typing,
+         * finish it first.
+         */
+
+        if (isTyping) {
+
+            const currentScene =
+                selectedMission.scenes[
+                    currentSceneIndex
+                ];
+
+
+            if (
+                currentScene.type ===
+                "dialogue"
+            ) {
+
+                finishTyping(
+                    dialogueText
+                );
+
+            } else {
+
+                finishTyping(
+                    narratorText
+                );
+            }
+
+
+            return;
+        }
+
+
+        /*
+         * Check final scene.
+         */
 
         const lastScene =
             currentSceneIndex >=
@@ -185,18 +661,25 @@ nextButton.addEventListener(
             completeStory();
 
             return;
-
         }
 
 
-        currentSceneIndex += 1;
+        /*
+         * Move forward.
+         */
+
+        currentSceneIndex +=
+            1;
 
 
         displayScene();
-
     }
 );
 
+
+/* =========================
+   QUIZ BUTTON
+========================= */
 
 quizButton.addEventListener(
     "click",
@@ -208,24 +691,30 @@ quizButton.addEventListener(
 
 
         window.location.href =
-            `quiz.html?event=${selectedMission.eventId}`;
-
+            `quiz.html?event=${
+                selectedMission.eventId
+            }`;
     }
 );
 
+
+/* =========================
+   INITIALIZE
+========================= */
 
 if (selectedMission) {
 
     missionTitle.textContent =
         selectedMission.title;
 
+
     missionSubtitle.textContent =
         selectedMission.subtitle;
+
 
     displayScene();
 
 } else {
 
     displayScene();
-
 }

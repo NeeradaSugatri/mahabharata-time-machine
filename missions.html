@@ -19,7 +19,13 @@
     >
 </head>
 
+
 <body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header class="story-header">
 
@@ -29,6 +35,7 @@
         >
             ← Back to Event
         </a>
+
 
         <div class="story-title">
 
@@ -49,73 +56,128 @@
     </header>
 
 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main class="story-main">
 
-        <!-- Scene -->
+
+        <!-- =========================
+             STORY SCENE
+        ========================== -->
 
         <section class="story-scene">
 
-            <div class="scene-visual">
+
+            <!-- =========================
+                 MAIN VISUAL
+            ========================== -->
+
+            <div
+                id="scene-visual"
+                class="scene-visual"
+            >
+
+
+                <!-- =========================
+                     CHARACTER
+                ========================== -->
 
                 <div
-                    id="scene-visual"
-                    class="visual-placeholder"
+                    id="character-stage"
+                    class="character-stage"
                 >
-                    Hastinapura
                 </div>
 
-            </div>
 
+                <!-- =========================
+                     CHARACTER DIALOGUE
+                ========================== -->
 
-            <!-- Dialogue -->
+                <div
+                    id="character-dialogue"
+                    class="character-dialogue"
+                >
 
-            <div class="dialogue-box">
-
-                <div class="dialogue-speaker">
-
-                    <span
+                    <div
                         id="dialogue-speaker"
+                        class="dialogue-speaker"
                     >
                         Narrator
-                    </span>
-
-                </div>
+                    </div>
 
 
-                <div class="dialogue-text">
-
-                    <p id="dialogue-text">
+                    <p
+                        id="dialogue-text"
+                        class="dialogue-text"
+                    >
                         Loading story...
                     </p>
 
                 </div>
 
+            </div>
 
-                <div class="dialogue-controls">
 
-                    <div
-                        id="scene-counter"
-                        class="scene-counter"
-                    >
-                        Scene 1 / 10
-                    </div>
 
-                    <button
-                        id="next-button"
-                        class="primary-button"
-                        type="button"
-                    >
-                        Next →
-                    </button>
+            <!-- =========================
+                 NARRATOR
+            ========================== -->
 
+            <div
+                id="narrator-panel"
+                class="narrator-panel"
+            >
+
+                <div class="narrator-label">
+                    NARRATOR
                 </div>
+
+
+                <p
+                    id="narrator-text"
+                    class="narrator-text"
+                >
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 STORY CONTROLS
+            ========================== -->
+
+            <div class="story-controls">
+
+
+                <div
+                    id="scene-counter"
+                    class="scene-counter"
+                >
+                    Scene 1 / 10
+                </div>
+
+
+                <button
+                    id="next-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    Next →
+                </button>
 
             </div>
 
         </section>
 
 
-        <!-- Story completion -->
+
+        <!-- =========================
+             STORY COMPLETE
+        ========================== -->
 
         <section
             id="story-complete"
@@ -127,13 +189,16 @@
                 STORY COMPLETE
             </p>
 
+
             <h2>
                 You have witnessed the Dice Game
             </h2>
 
+
             <p id="completion-text">
                 You have completed the interactive story.
             </p>
+
 
             <button
                 id="quiz-button"
@@ -148,6 +213,11 @@
     </main>
 
 
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
         <p>
@@ -157,8 +227,15 @@
     </footer>
 
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="js/data/missions.js"></script>
+
     <script src="js/mission.js"></script>
+
 
 </body>
 
