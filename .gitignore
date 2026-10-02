@@ -1,0 +1,9 @@
+# VS Code
+.vscode/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
