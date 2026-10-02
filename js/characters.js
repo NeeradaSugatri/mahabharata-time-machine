@@ -24,7 +24,23 @@ function getCharacterImage(character) {
         arjuna: "png",
         yudhishthira: "png",
         bhima: "png",
-        nakula: "png"
+        nakula: "png",
+        sahadeva: "png",
+        draupadi: "png",
+        kunti: "png",
+        duryodhana: "png",
+        dushasana: "png",
+        dhritarashtra: "png",
+        gandhari: "png",
+        shakuni: "png",
+        bhishma: "png",
+        drona: "png",
+        karna: "png",
+        krishna: "png",
+        ashwatthama: "png",
+        vidura: "png",
+        drupada: "png",
+        abhimanyu: "png",
     };
 
     const extension =
