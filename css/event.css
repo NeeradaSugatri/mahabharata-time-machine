@@ -1,9 +1,17 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+/* =========================
+   BODY
+========================= */
 
 body {
 
@@ -25,7 +33,9 @@ body {
 }
 
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 .event-header {
 
@@ -46,6 +56,7 @@ body {
     position: absolute;
 
     left: 7%;
+
     top: 35px;
 
     color: #e8c47a;
@@ -53,6 +64,12 @@ body {
     text-decoration: none;
 
     font-size: 1rem;
+}
+
+
+.back-link:hover {
+
+    color: #ffffff;
 }
 
 
@@ -77,7 +94,9 @@ body {
 }
 
 
-/* Main */
+/* =========================
+   MAIN
+========================= */
 
 main {
 
@@ -89,7 +108,9 @@ main {
 }
 
 
-/* Hero */
+/* =========================
+   EVENT HERO
+========================= */
 
 .event-hero {
 
@@ -107,13 +128,22 @@ main {
 
 
 .event-image {
+
     overflow: hidden;
+
+    border-radius: 12px;
+
 }
 
+
 .event-image img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
@@ -169,7 +199,9 @@ main {
 }
 
 
-/* Sections */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .event-section {
 
@@ -186,7 +218,9 @@ main {
 }
 
 
-/* Characters */
+/* =========================
+   CHARACTERS
+========================= */
 
 .character-list {
 
@@ -216,7 +250,9 @@ main {
 }
 
 
-/* Mission */
+/* =========================
+   MISSION
+========================= */
 
 .mission-preview {
 
@@ -225,7 +261,7 @@ main {
     padding:
         60px 30px;
 
-    margin-bottom: 70px;
+    margin-bottom: 90px;
 
     border-radius: 15px;
 
@@ -291,12 +327,14 @@ main {
 }
 
 
-/* Consequences */
+/* =========================
+   CONSEQUENCES SECTION
+========================= */
 
 .consequence-section {
 
     padding:
-        30px;
+        45px 35px;
 
     border-left:
         3px solid
@@ -304,10 +342,32 @@ main {
 
     background:
         rgba(55, 36, 22, 0.5);
+
+    border-radius:
+        0 14px 14px 0;
 }
 
 
-#event-consequence {
+/* =========================
+   CONSEQUENCES HEADING
+========================= */
+
+.consequences-heading {
+
+    margin-bottom: 35px;
+}
+
+
+.consequences-heading h2 {
+
+    margin:
+        10px 0 15px;
+}
+
+
+.consequences-heading > p:not(.eyebrow) {
+
+    max-width: 760px;
 
     color: #cdbb9c;
 
@@ -315,7 +375,198 @@ main {
 }
 
 
-/* Footer */
+/* =========================
+   LOCKED CONSEQUENCES
+========================= */
+
+.consequences-locked {
+
+    padding:
+        30px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(20, 13, 8, 0.55);
+
+    border:
+        1px dashed
+        rgba(215, 169, 75, 0.45);
+
+    text-align: center;
+
+    color: #cdbb9c;
+}
+
+
+.lock-icon {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 2rem;
+}
+
+
+.consequences-locked p {
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONSEQUENCES CONTENT
+========================= */
+
+.consequences-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================
+   CONSEQUENCE ITEM
+========================= */
+
+.consequence-item {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        90px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+    padding:
+        25px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(25, 16, 10, 0.72);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.consequence-item:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(215, 169, 75, 0.6);
+}
+
+
+/* =========================
+   CONSEQUENCE ICON
+========================= */
+
+.consequence-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(215, 169, 75, 0.12);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.4);
+
+    font-size: 2rem;
+}
+
+
+/* =========================
+   CONSEQUENCE TEXT
+========================= */
+
+.consequence-text {
+
+    min-width: 0;
+}
+
+
+.consequence-number {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #d7a94b;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+
+.consequence-text h3 {
+
+    margin-bottom: 10px;
+
+    color: #f4e4c1;
+
+    font-size: 1.35rem;
+}
+
+
+.consequence-text p {
+
+    color: #cdbb9c;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ARROWS
+========================= */
+
+.consequence-arrow {
+
+    margin:
+        10px 0;
+
+    color: #d7a94b;
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
 
@@ -331,7 +582,9 @@ footer {
 }
 
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -354,6 +607,47 @@ footer {
     .event-introduction h2 {
 
         font-size: 2rem;
+    }
+
+
+    .consequence-section {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .consequence-item {
+
+        grid-template-columns:
+            1fr;
+
+        text-align: center;
+
+        justify-items: center;
+
+    }
+
+
+    .consequence-text {
+
+        width: 100%;
+    }
+
+
+    .consequence-icon {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 1.7rem;
+    }
+
+
+    .consequence-text h3 {
+
+        font-size: 1.15rem;
     }
 
 }

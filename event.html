@@ -24,6 +24,11 @@
 
 <body>
 
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header class="event-header">
 
         <a
@@ -49,21 +54,29 @@
     </header>
 
 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main>
 
 
-        <!-- Event hero -->
+        <!-- =========================
+             EVENT HERO
+        ========================== -->
 
         <section class="event-hero">
 
+            <div class="event-image">
 
-           <div class="event-image">
-        <img
-        id="event-image"
-        src="assets/events/dice-game.png"
-        alt="The Dice Game at Hastinapura"
-        >
-        </div>
+                <img
+                    id="event-image"
+                    src="assets/events/dice-game.png"
+                    alt="The Dice Game at Hastinapura"
+                >
+
+            </div>
 
 
             <div class="event-introduction">
@@ -92,7 +105,9 @@
 
 
 
-        <!-- Characters -->
+        <!-- =========================
+             CHARACTERS
+        ========================== -->
 
         <section class="event-section">
 
@@ -116,7 +131,9 @@
 
 
 
-        <!-- Mission -->
+        <!-- =========================
+             INTERACTIVE MISSION
+        ========================== -->
 
         <section class="mission-preview">
 
@@ -139,6 +156,7 @@
             <button
                 id="start-mission"
                 class="primary-button"
+                type="button"
             >
                 Start Mission
             </button>
@@ -147,26 +165,240 @@
 
 
 
-        <!-- Consequences -->
+        <!-- =========================
+             CONSEQUENCES
+        ========================== -->
 
         <section
+            id="consequences"
             class="event-section consequence-section"
         >
 
-            <p class="eyebrow">
-                CONSEQUENCES
-            </p>
+            <div class="consequences-heading">
+
+                <p class="eyebrow">
+                    CONSEQUENCES
+                </p>
 
 
-            <h2>
-                What Changed?
-            </h2>
+                <h2>
+                    What Changed?
+                </h2>
 
 
-            <p id="event-consequence">
-                Discover the consequences after
-                completing the mission.
-            </p>
+                <p>
+                    The Dice Game sets in motion
+                    a chain of events that changes
+                    the future of the Pandavas,
+                    Kauravas and the Kuru kingdom.
+                </p>
+
+            </div>
+
+
+            <!-- Locked state -->
+
+            <div
+                id="consequences-locked"
+                class="consequences-locked"
+            >
+
+                <span class="lock-icon">
+                    🔒
+                </span>
+
+                <p>
+                    Complete the interactive story
+                    and quiz to unlock the consequences.
+                </p>
+
+            </div>
+
+
+            <!-- Unlocked state -->
+
+            <div
+                id="consequences-content"
+                class="consequences-content"
+                hidden
+            >
+
+
+                <!-- Consequence 1 -->
+
+                <article class="consequence-item">
+
+                    <div class="consequence-icon">
+                        👑
+                    </div>
+
+
+                    <div class="consequence-text">
+
+                        <span class="consequence-number">
+                            01
+                        </span>
+
+                        <h3>
+                            The Pandavas Lose Their Kingdom
+                        </h3>
+
+                        <p>
+                            Yudhishthira loses his wealth
+                            and kingdom during the dice games,
+                            changing the position of the Pandavas
+                            within the Kuru kingdom.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <div class="consequence-arrow">
+                    ↓
+                </div>
+
+
+                <!-- Consequence 2 -->
+
+                <article class="consequence-item">
+
+                    <div class="consequence-icon">
+                        🌳
+                    </div>
+
+
+                    <div class="consequence-text">
+
+                        <span class="consequence-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Thirteen Years Away
+                        </h3>
+
+                        <p>
+                            After the second dice game,
+                            the Pandavas are required to spend
+                            twelve years in exile followed by
+                            a thirteenth year in concealment.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <div class="consequence-arrow">
+                    ↓
+                </div>
+
+
+                <!-- Consequence 3 -->
+
+                <article class="consequence-item">
+
+                    <div class="consequence-icon">
+                        ⚔️
+                    </div>
+
+
+                    <div class="consequence-text">
+
+                        <span class="consequence-number">
+                            03
+                        </span>
+
+                        <h3>
+                            The Family Conflict Deepens
+                        </h3>
+
+                        <p>
+                            The events of the dice games deepen
+                            the conflict between the Pandavas
+                            and Kauravas and make reconciliation
+                            increasingly difficult.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <div class="consequence-arrow">
+                    ↓
+                </div>
+
+
+                <!-- Consequence 4 -->
+
+                <article class="consequence-item">
+
+                    <div class="consequence-icon">
+                        📜
+                    </div>
+
+
+                    <div class="consequence-text">
+
+                        <span class="consequence-number">
+                            04
+                        </span>
+
+                        <h3>
+                            The Path Toward Peace Becomes Difficult
+                        </h3>
+
+                        <p>
+                            The consequences of the dice games
+                            become part of the larger conflict
+                            that later leads to attempts to
+                            resolve the dispute.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <div class="consequence-arrow">
+                    ↓
+                </div>
+
+
+                <!-- Consequence 5 -->
+
+                <article class="consequence-item">
+
+                    <div class="consequence-icon">
+                        🏹
+                    </div>
+
+
+                    <div class="consequence-text">
+
+                        <span class="consequence-number">
+                            05
+                        </span>
+
+                        <h3>
+                            The Conflict Moves Toward War
+                        </h3>
+
+                        <p>
+                            The Pandavas' exile and the continuing
+                            rivalry between the two sides eventually
+                            contribute to the chain of events that
+                            leads toward the Kurukshetra War.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
 
         </section>
 
@@ -174,6 +406,10 @@
     </main>
 
 
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -185,9 +421,14 @@
 
 
 
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="js/data/events.js"></script>
 
     <script src="js/event.js"></script>
+
 
 </body>
 

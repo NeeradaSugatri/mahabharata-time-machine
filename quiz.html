@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Quiz | Mahabharata Time Machine
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/quiz.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="quiz-header">
+
+        <a
+            href="missions.html?event=dice-game"
+            class="back-link"
+        >
+            ← Back to Story
+        </a>
+
+
+        <div class="quiz-title">
+
+            <p class="eyebrow">
+                TEST YOUR KNOWLEDGE
+            </p>
+
+            <h1>
+                The Dice Game Quiz
+            </h1>
+
+            <p>
+                Answer the questions to test
+                what you learned from the story.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="quiz-main">
+
+
+        <!-- =========================
+             QUIZ
+        ========================== -->
+
+        <section
+            id="quiz-container"
+            class="quiz-container"
+        >
+
+            <div class="quiz-progress">
+
+                <span id="question-number">
+                    Question 1 of 5
+                </span>
+
+            </div>
+
+
+            <h2 id="question">
+                Loading question...
+            </h2>
+
+
+            <div
+                id="answers"
+                class="answers"
+            >
+            </div>
+
+
+            <div
+                id="feedback"
+                class="feedback"
+                aria-live="polite"
+            >
+            </div>
+
+
+            <button
+                id="next-button"
+                class="primary-button"
+                type="button"
+                disabled
+            >
+                Next →
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             QUIZ RESULT
+        ========================== -->
+
+        <section
+            id="quiz-result"
+            class="quiz-result"
+            hidden
+        >
+
+            <p class="eyebrow">
+                QUIZ COMPLETE
+            </p>
+
+
+            <h2 id="result-title">
+                Quiz Complete
+            </h2>
+
+
+            <p id="score-text">
+                You scored 0 out of 5.
+            </p>
+
+
+            <div class="xp-box">
+
+                <span>
+                    XP EARNED
+                </span>
+
+                <strong id="xp-earned">
+                    +0 XP
+                </strong>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button
+                    id="try-again-button"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Try Again
+                </button>
+
+
+                <button
+                    id="consequences-button"
+                    class="primary-button"
+                    type="button"
+                >
+                    View Consequences →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Mahabharata Time Machine
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/data/quizzes.js"></script>
+
+    <script src="js/quiz.js"></script>
+
+
+</body>
+
+</html>
