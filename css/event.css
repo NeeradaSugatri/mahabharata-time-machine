@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3d2818,
+            #17100b 70%
+        );
+
+    color: #f4e4c1;
+}
+
+
+/* Header */
+
+.event-header {
+
+    padding: 30px 7%;
+
+    border-bottom:
+        1px solid
+        rgba(244, 228, 193, 0.25);
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.back-link {
+
+    position: absolute;
+
+    left: 7%;
+    top: 35px;
+
+    color: #e8c47a;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+}
+
+
+.eyebrow {
+
+    color: #d7a94b;
+
+    letter-spacing: 3px;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+}
+
+
+.event-header h1 {
+
+    margin-top: 10px;
+
+    font-size:
+        clamp(2rem, 5vw, 4rem);
+}
+
+
+/* Main */
+
+main {
+
+    width:
+        min(1100px, 90%);
+
+    margin:
+        60px auto 100px;
+}
+
+
+/* Hero */
+
+.event-hero {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    margin-bottom: 90px;
+}
+
+
+.event-image {
+
+    min-height: 350px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.5);
+}
+
+
+.image-placeholder {
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c301c,
+            #1c120c
+        );
+
+    color: #d7a94b;
+
+    letter-spacing: 4px;
+
+    font-size: 0.9rem;
+}
+
+
+.event-location {
+
+    color: #d7a94b;
+
+    margin-bottom: 12px;
+}
+
+
+.event-introduction h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+}
+
+
+.event-description {
+
+    color: #d6c6aa;
+
+    line-height: 1.8;
+
+    font-size: 1.05rem;
+}
+
+
+/* Sections */
+
+.event-section {
+
+    margin-bottom: 70px;
+}
+
+
+.event-section h2 {
+
+    font-size: 2rem;
+
+    margin:
+        10px 0 25px;
+}
+
+
+/* Characters */
+
+.character-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.character-tag {
+
+    padding:
+        10px 16px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(215, 169, 75, 0.12);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.3);
+
+    color: #e8c47a;
+}
+
+
+/* Mission */
+
+.mission-preview {
+
+    text-align: center;
+
+    padding:
+        60px 30px;
+
+    margin-bottom: 70px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(55, 36, 22, 0.8);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.4);
+}
+
+
+.mission-preview h2 {
+
+    font-size: 2.2rem;
+
+    margin:
+        12px 0;
+}
+
+
+.mission-preview p:not(.eyebrow) {
+
+    color: #d6c6aa;
+
+    margin-bottom: 25px;
+}
+
+
+.primary-button {
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding:
+        14px 28px;
+
+    background: #b87333;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+
+    background: #d7a94b;
+
+    color: #24160d;
+
+    transform: translateY(-2px);
+}
+
+
+/* Consequences */
+
+.consequence-section {
+
+    padding:
+        30px;
+
+    border-left:
+        3px solid
+        #d7a94b;
+
+    background:
+        rgba(55, 36, 22, 0.5);
+}
+
+
+#event-consequence {
+
+    color: #cdbb9c;
+
+    line-height: 1.7;
+}
+
+
+/* Footer */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #8f806d;
+
+    border-top:
+        1px solid
+        rgba(244, 228, 193, 0.15);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .back-link {
+
+        position: static;
+
+        display: block;
+
+        margin-bottom: 20px;
+    }
+
+
+    .event-hero {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .event-introduction h2 {
+
+        font-size: 2rem;
+    }
+
+}
