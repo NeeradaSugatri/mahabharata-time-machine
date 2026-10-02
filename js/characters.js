@@ -20,13 +20,11 @@ const filterButtons =
 
 function getCharacterImage(character) {
 
-    /*
-       Arjuna currently uses PNG.
-       Other characters can use WEBP later.
-    */
-
     const imageExtensions = {
-        arjuna: "png"
+        arjuna: "png",
+        yudhishthira: "png",
+        bhima: "png",
+        nakula: "png"
     };
 
     const extension =
@@ -69,8 +67,7 @@ function displayCharacters(group = "all") {
 
                 <img
                     src="${getCharacterImage(character)}"
-                    alt="${character.name}"
-                    onerror="this.style.display='none';"
+                    alt="${character.name} portrait"
                 >
 
                 <div class="portrait-placeholder">
@@ -86,16 +83,13 @@ function displayCharacters(group = "all") {
                     ${formatGroup(character.group)}
                 </p>
 
-
                 <h3>
                     ${character.name}
                 </h3>
 
-
                 <p>
                     ${character.role}
                 </p>
-
 
                 <button
                     class="view-character"
@@ -108,6 +102,39 @@ function displayCharacters(group = "all") {
             </div>
         `;
 
+
+        /* ====================================
+           IMAGE HANDLING
+           ==================================== */
+
+        const image =
+            card.querySelector(".character-card-image img");
+
+        const placeholder =
+            card.querySelector(".portrait-placeholder");
+
+
+        image.addEventListener("load", () => {
+
+            image.style.display = "block";
+
+            placeholder.style.display = "none";
+
+        });
+
+
+        image.addEventListener("error", () => {
+
+            image.style.display = "none";
+
+            placeholder.style.display = "flex";
+
+        });
+
+
+        /* ====================================
+           CARD CLICK
+           ==================================== */
 
         card.addEventListener(
             "click",
@@ -142,7 +169,6 @@ function formatGroup(group) {
 
     };
 
-
     return groupNames[group] || group;
 
 }
@@ -164,10 +190,6 @@ function showCharacter(characterId) {
         return;
     }
 
-
-    /* ====================================
-       BASIC INFORMATION
-       ==================================== */
 
     document.getElementById(
         "character-name"
@@ -374,7 +396,6 @@ function formatEventName(eventId) {
             "After the War"
 
     };
-
 
     return eventNames[eventId] || eventId;
 
