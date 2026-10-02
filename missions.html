@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Interactive Story | Mahabharata Time Machine
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/missions.css"
+    >
+</head>
+
+<body>
+
+    <header class="story-header">
+
+        <a
+            href="event.html?id=dice-game"
+            class="back-link"
+        >
+            ← Back to Event
+        </a>
+
+        <div class="story-title">
+
+            <p class="eyebrow">
+                INTERACTIVE STORY
+            </p>
+
+            <h1 id="mission-title">
+                The Dice Game
+            </h1>
+
+            <p id="mission-subtitle">
+                Enter the Royal Assembly
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="story-main">
+
+        <!-- Scene -->
+
+        <section class="story-scene">
+
+            <div class="scene-visual">
+
+                <div
+                    id="scene-visual"
+                    class="visual-placeholder"
+                >
+                    Hastinapura
+                </div>
+
+            </div>
+
+
+            <!-- Dialogue -->
+
+            <div class="dialogue-box">
+
+                <div class="dialogue-speaker">
+
+                    <span
+                        id="dialogue-speaker"
+                    >
+                        Narrator
+                    </span>
+
+                </div>
+
+
+                <div class="dialogue-text">
+
+                    <p id="dialogue-text">
+                        Loading story...
+                    </p>
+
+                </div>
+
+
+                <div class="dialogue-controls">
+
+                    <div
+                        id="scene-counter"
+                        class="scene-counter"
+                    >
+                        Scene 1 / 10
+                    </div>
+
+                    <button
+                        id="next-button"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Story completion -->
+
+        <section
+            id="story-complete"
+            class="story-complete"
+            hidden
+        >
+
+            <p class="eyebrow">
+                STORY COMPLETE
+            </p>
+
+            <h2>
+                You have witnessed the Dice Game
+            </h2>
+
+            <p id="completion-text">
+                You have completed the interactive story.
+            </p>
+
+            <button
+                id="quiz-button"
+                class="primary-button"
+                type="button"
+            >
+                Take the Quiz →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Mahabharata Time Machine
+        </p>
+
+    </footer>
+
+
+    <script src="js/data/missions.js"></script>
+    <script src="js/mission.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3d2818,
+            #17100b 75%
+        );
+
+    color: #f4e4c1;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.story-header {
+    padding: 25px 7% 20px;
+
+    border-bottom:
+        1px solid
+        rgba(244, 228, 193, 0.2);
+
+    text-align: center;
+
+    position: relative;
+}
+
+.back-link {
+    position: absolute;
+
+    left: 7%;
+    top: 30px;
+
+    color: #e8c47a;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+.eyebrow {
+    color: #d7a94b;
+
+    letter-spacing: 3px;
+
+    font-size: 0.75rem;
+
+    text-transform: uppercase;
+}
+
+.story-title h1 {
+    margin-top: 8px;
+
+    font-size:
+        clamp(2rem, 5vw, 3.5rem);
+}
+
+#mission-subtitle {
+    margin-top: 8px;
+
+    color: #cdbb9c;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.story-main {
+    width:
+        min(1000px, 92%);
+
+    margin:
+        45px auto 80px;
+}
+
+
+/* =========================
+   STORY SCENE
+========================= */
+
+.story-scene {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   VISUAL
+========================= */
+
+.scene-visual {
+    min-height: 430px;
+
+    border-radius:
+        16px 16px 0 0;
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.45);
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c301c,
+            #21140d
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #d7a94b;
+
+    letter-spacing: 2px;
+
+    font-size: 1.1rem;
+
+    text-transform: uppercase;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* subtle cinematic overlay */
+
+.scene-visual::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 20%,
+            rgba(0, 0, 0, 0.45)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.dialogue-box {
+    background:
+        rgba(30, 19, 12, 0.97);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.45);
+
+    border-top: none;
+
+    padding: 28px 32px 25px;
+
+    border-radius:
+        0 0 16px 16px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* speaker */
+
+.dialogue-speaker {
+    margin-bottom: 12px;
+}
+
+.dialogue-speaker span {
+    color: #e8c47a;
+
+    font-size: 0.85rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* text */
+
+.dialogue-text {
+    min-height: 90px;
+}
+
+.dialogue-text p {
+    color: #f0dfc0;
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+}
+
+
+/* controls */
+
+.dialogue-controls {
+    margin-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.scene-counter {
+    color: #8f806d;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-button {
+    border: none;
+
+    border-radius: 7px;
+
+    padding:
+        12px 24px;
+
+    background:
+        #b87333;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: bold;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #d7a94b;
+
+    color: #24160d;
+
+    transform:
+        translateY(-2px);
+}
+
+.primary-button:focus-visible {
+    outline:
+        3px solid
+        rgba(232, 196, 122, 0.7);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   STORY COMPLETE
+========================= */
+
+.story-complete {
+    max-width: 800px;
+
+    margin:
+        50px auto 0;
+
+    padding:
+        55px 30px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    background:
+        rgba(55, 36, 22, 0.85);
+
+    border:
+        1px solid
+        rgba(215, 169, 75, 0.45);
+}
+
+.story-complete h2 {
+    margin:
+        12px 0 15px;
+
+    font-size: 2rem;
+}
+
+.story-complete p:not(.eyebrow) {
+    color: #cdbb9c;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #8f806d;
+
+    border-top:
+        1px solid
+        rgba(244, 228, 193, 0.15);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .back-link {
+        position: static;
+
+        display: block;
+
+        margin-bottom: 18px;
+    }
+
+    .story-header {
+        padding:
+            20px 5%;
+    }
+
+    .story-main {
+        width: 94%;
+
+        margin-top: 30px;
+    }
+
+    .scene-visual {
+        min-height: 300px;
+
+        padding: 25px;
+
+        font-size: 0.9rem;
+    }
+
+    .dialogue-box {
+        padding:
+            22px 20px;
+    }
+
+    .dialogue-text p {
+        font-size: 1.05rem;
+    }
+
+    .dialogue-controls {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+
+}
