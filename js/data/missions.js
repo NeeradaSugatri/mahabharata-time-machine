@@ -28,7 +28,10 @@ const missions = [
                     "After the Rajasuya sacrifice, the Pandavas had established Indraprastha as a powerful kingdom. Duryodhana had seen their prosperity and returned to Hastinapura deeply troubled by what he had witnessed.",
 
                 visual:
-                    "Indraprastha and its magnificent royal court"
+                    "Indraprastha and its magnificent royal court",
+
+                background:
+                    "hastinapura-court"
             },
 
 
@@ -49,7 +52,10 @@ const missions = [
                     "Yudhishthira, the king of Hastinapura has invited you to the royal assembly. A game of dice has been proposed.",
 
                 visual:
-                    "Vidura brings the invitation to the Pandavas"
+                    "Vidura brings the invitation to the Pandavas",
+
+                background:
+                    "hastinapura-court"
             },
 
 
@@ -70,7 +76,10 @@ const missions = [
                     "I understand the danger of such a game, but an invitation from the Kuru court cannot easily be refused. We will go to Hastinapura.",
 
                 visual:
-                    "Yudhishthira prepares to travel to Hastinapura"
+                    "Yudhishthira prepares to travel to Hastinapura",
+
+                background:
+                    "hastinapura-court"
             },
 
 
@@ -331,7 +340,10 @@ const missions = [
                     "But the conflict is not over. Another game of dice is arranged. The Pandavas lose again, and the terms require them to spend twelve years in exile followed by a thirteenth year in concealment.",
 
                 visual:
-                    "The second dice game seals the Pandavas' exile"
+                    "The second dice game seals the Pandavas' exile",
+
+                background:
+                    "hastinapura-court"
             },
 
 
@@ -352,7 +364,10 @@ const missions = [
                     "The Pandavas leave the court and begin their exile. The dice game has transformed the rivalry within the Kuru family into a conflict that will eventually lead toward war.",
 
                 visual:
-                    "The Pandavas leave Hastinapura for exile"
+                    "The Pandavas leave Hastinapura for exile",
+
+                background:
+                    "hastinapura-court"
             }
 
         ],

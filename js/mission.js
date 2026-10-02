@@ -85,6 +85,12 @@ const nextButton =
     );
 
 
+const previousButton =
+    document.getElementById(
+        "previous-button"
+    );
+
+
 const storyComplete =
     document.getElementById(
         "story-complete"
@@ -365,13 +371,9 @@ function displayCharacterScene(
      * Tell CSS which character
      * is currently speaking.
      *
-     * Example:
-     *
-     * data-character="shakuni"
-     *
-     * CSS will then use the
-     * Shakuni-specific bubble
-     * position.
+     * CSS can use this character
+     * name for character-specific
+     * speech bubble positioning.
      */
 
     sceneVisual.dataset.character =
@@ -415,7 +417,7 @@ function displayNarratorScene(
 ) {
 
     /*
-     * Remove the character
+     * Remove character-specific
      * positioning information.
      */
 
@@ -477,6 +479,10 @@ function displayScene() {
             "none";
 
 
+        previousButton.style.display =
+            "none";
+
+
         return;
     }
 
@@ -513,7 +519,7 @@ function displayScene() {
 
 
     /*
-     * Button text
+     * Next button text
      */
 
     if (
@@ -528,6 +534,26 @@ function displayScene() {
 
         nextButton.textContent =
             "Next →";
+    }
+
+
+    /*
+     * Previous button
+     *
+     * Disabled on Scene 1.
+     */
+
+    if (
+        currentSceneIndex === 0
+    ) {
+
+        previousButton.disabled =
+            true;
+
+    } else {
+
+        previousButton.disabled =
+            false;
     }
 
 
@@ -586,6 +612,10 @@ function completeStory() {
 
 
     nextButton.style.display =
+        "none";
+
+
+    previousButton.style.display =
         "none";
 
 
@@ -669,6 +699,78 @@ nextButton.addEventListener(
          */
 
         currentSceneIndex +=
+            1;
+
+
+        displayScene();
+    }
+);
+
+
+/* =========================
+   PREVIOUS BUTTON
+========================= */
+
+previousButton.addEventListener(
+    "click",
+    function () {
+
+        if (!selectedMission) {
+            return;
+        }
+
+
+        /*
+         * If text is still typing,
+         * finish it first.
+         */
+
+        if (isTyping) {
+
+            const currentScene =
+                selectedMission.scenes[
+                    currentSceneIndex
+                ];
+
+
+            if (
+                currentScene.type ===
+                "dialogue"
+            ) {
+
+                finishTyping(
+                    dialogueText
+                );
+
+            } else {
+
+                finishTyping(
+                    narratorText
+                );
+            }
+
+
+            return;
+        }
+
+
+        /*
+         * Do not go before Scene 1.
+         */
+
+        if (
+            currentSceneIndex <= 0
+        ) {
+
+            return;
+        }
+
+
+        /*
+         * Move backward.
+         */
+
+        currentSceneIndex -=
             1;
 
 
