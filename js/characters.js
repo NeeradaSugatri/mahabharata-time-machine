@@ -229,6 +229,48 @@ function showCharacter(characterId) {
         "character-description"
     ).textContent =
         character.description;
+    /* ====================================
+   CHARACTER DETAILS
+==================================== */
+
+const detailsContainer =
+    document.getElementById(
+        "character-details-info"
+    );
+
+if (detailsContainer) {
+
+    detailsContainer.innerHTML = "";
+
+    const details = [
+        ["Family", character.details.family],
+        ["Spouse", character.details.spouse],
+        ["Teacher", character.details.teacher],
+        ["Weapon", character.details.weapon],
+        ["Traits", character.details.traits]
+    ];
+
+    details.forEach(
+        ([label, value]) => {
+
+            const detail =
+                document.createElement("div");
+
+            detail.className =
+                "character-detail-row";
+
+            detail.innerHTML = `
+                <strong>${label}</strong>
+                <span>${value}</span>
+            `;
+
+            detailsContainer.appendChild(
+                detail
+            );
+
+        }
+    );
+}
 
 
     /* ====================================

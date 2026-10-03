@@ -471,6 +471,52 @@
     margin-top: 25px;
 }
 
+/* ========================================
+   CHARACTER INFORMATION
+   ======================================== */
+
+.character-details-info {
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid #59431f;
+}
+
+
+.character-detail-row {
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 18px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #3f2d18;
+}
+
+
+.character-detail-row strong {
+    color: #e4bd79;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.character-detail-row span {
+    color: #c8b38e;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+}
+
 
 .detail-block h4 {
     margin-bottom: 12px;
