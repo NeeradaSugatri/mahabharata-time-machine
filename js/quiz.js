@@ -467,7 +467,7 @@ consequencesButton.addEventListener(
     function () {
 
         window.location.href =
-            "event.html?id=dice-game#consequences";
+            "consequences.html?event=dice-game";
 
     }
 );

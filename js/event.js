@@ -77,28 +77,6 @@ const missionButton =
 
 
 /* =========================
-   CONSEQUENCES ELEMENTS
-========================= */
-
-const consequencesSection =
-    document.getElementById(
-        "consequences"
-    );
-
-
-const consequencesLocked =
-    document.getElementById(
-        "consequences-locked"
-    );
-
-
-const consequencesContent =
-    document.getElementById(
-        "consequences-content"
-    );
-
-
-/* =========================
    CHARACTER NAMES
 ========================= */
 
@@ -175,88 +153,6 @@ function formatLocation(
 
 
 /* =========================
-   CHECK QUIZ COMPLETION
-========================= */
-
-function isQuizCompleted() {
-
-    /*
-     * Consequences are currently
-     * connected to the Dice Game quiz.
-     */
-
-    if (
-        selectedEvent &&
-        selectedEvent.id ===
-            "dice-game"
-    ) {
-
-        return (
-            localStorage.getItem(
-                "diceGameQuizCompleted"
-            ) === "true"
-        );
-
-    }
-
-
-    return false;
-}
-
-
-/* =========================
-   UPDATE CONSEQUENCES
-========================= */
-
-function updateConsequences() {
-
-    /*
-     * If the consequences section
-     * does not exist, do nothing.
-     */
-
-    if (
-        !consequencesLocked ||
-        !consequencesContent
-    ) {
-
-        return;
-
-    }
-
-
-    if (
-        isQuizCompleted()
-    ) {
-
-        /*
-         * Unlock consequences.
-         */
-
-        consequencesLocked.hidden =
-            true;
-
-        consequencesContent.hidden =
-            false;
-
-    } else {
-
-        /*
-         * Keep consequences locked.
-         */
-
-        consequencesLocked.hidden =
-            false;
-
-        consequencesContent.hidden =
-            true;
-
-    }
-
-}
-
-
-/* =========================
    DISPLAY EVENT
 ========================= */
 
@@ -282,14 +178,6 @@ function displayEvent() {
 
         missionButton.style.display =
             "none";
-
-
-        if (consequencesSection) {
-
-            consequencesSection.style.display =
-                "none";
-
-        }
 
 
         return;
@@ -393,48 +281,6 @@ function displayEvent() {
 
         };
 
-
-    /* =========================
-       CONSEQUENCES
-    ========================== */
-
-    updateConsequences();
-
-}
-
-
-/* =========================
-   SCROLL TO CONSEQUENCES
-========================= */
-
-function scrollToConsequences() {
-
-    if (
-        !consequencesSection
-    ) {
-
-        return;
-
-    }
-
-
-    /*
-     * Wait until the page has
-     * finished rendering.
-     */
-
-    setTimeout(
-        function () {
-
-            consequencesSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        },
-        300
-    );
-
 }
 
 
@@ -443,28 +289,3 @@ function scrollToConsequences() {
 ========================= */
 
 displayEvent();
-
-
-/* =========================
-   HANDLE #consequences
-========================= */
-
-if (
-    window.location.hash ===
-    "#consequences"
-) {
-
-    /*
-     * Only scroll if the quiz
-     * has actually been completed.
-     */
-
-    if (
-        isQuizCompleted()
-    ) {
-
-        scrollToConsequences();
-
-    }
-
-}

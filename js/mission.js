@@ -5,7 +5,7 @@ const params =
 
 
 const eventId =
-    params.get("event");
+    params.get("event") || "dice-game";
 
 
 const selectedMission =

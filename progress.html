@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Progress | Mahabharata Time Machine</title>
+
+     <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/event.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/progress.css"
+    >
+</head>
+
+<body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+<header class="navbar">
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+        Mahabharata Time Machine
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="timeline.html">
+            Timeline
+        </a>
+
+        <a href="map.html">
+            Map
+        </a>
+
+        <a href="characters.html">
+            Characters
+        </a>
+
+        <a href="missions.html">
+            Missions
+        </a>
+
+    </nav>
+
+</header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="progress-page">
+
+        <section class="progress-header">
+
+            <p class="eyebrow">
+                JOURNEY PROGRESS
+            </p>
+
+            <h1>
+                Your Progress
+            </h1>
+
+            <p>
+                See what you have learned and continue your journey
+                through the Mahabharata.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             CURRENT EVENT
+        ========================== -->
+
+        <section class="progress-card">
+
+            <p class="section-label">
+                COMPLETED EVENT
+            </p>
+
+            <h2 id="completed-event-title">
+                The Dice Game
+            </h2>
+
+            <p id="completed-event-description">
+                Your journey through this event is complete.
+            </p>
+
+            <div class="completion-status">
+
+                <span class="status-icon">
+                    ✓
+                </span>
+
+                <span>
+                    Event Completed
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUIZ RESULTS
+        ========================== -->
+
+        <section class="quiz-progress">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    QUIZ RESULTS
+                </p>
+
+                <h2>
+                    What Did You Learn?
+                </h2>
+
+            </div>
+
+
+            <div class="progress-stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Score
+                    </span>
+
+                    <strong id="quiz-score">
+                        0 / 5
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Percentage
+                    </span>
+
+                    <strong id="quiz-percentage">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        XP Earned
+                    </span>
+
+                    <strong id="quiz-xp">
+                        0 XP
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEXT EVENT
+        ========================== -->
+
+        <section class="next-event-card">
+
+            <p class="section-label">
+                NEXT EVENT
+            </p>
+
+            <h2 id="next-event-title">
+                The Exile
+            </h2>
+
+            <p id="next-event-description">
+                Following the events at Hastinapura, the Pandavas
+                enter their period of exile.
+            </p>
+
+            <p
+                class="next-event-location"
+                id="next-event-location"
+            >
+                📍 Matsya
+            </p>
+
+            <a
+                href="#"
+                id="next-event-button"
+                class="primary-button"
+            >
+                Continue Journey →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="js/data/events.js"></script>
+    <script src="js/progress.js"></script>
+
+</body>
+
+</html>

@@ -31,7 +31,7 @@ const missions = [
                     "Indraprastha and its magnificent royal court",
 
                 background:
-                    "hastinapura-court"
+                    "indraprastha-prosperity",
             },
 
 
@@ -103,7 +103,7 @@ const missions = [
                     "The Kuru royal assembly at Hastinapura",
 
                 background:
-                    "hastinapura-court"
+                    "pandavas-enter-assembly",
             },
 
 
@@ -151,7 +151,7 @@ const missions = [
                     "The dice roll across the royal gaming board",
 
                 background:
-                    "hastinapura-court"
+                    "dice-wager",
             },
 
 
@@ -175,7 +175,7 @@ const missions = [
                     "The royal assembly grows tense as the stakes rise",
 
                 background:
-                    "hastinapura-court"
+                    "kingdom-lost",
             },
 
 
@@ -223,7 +223,7 @@ const missions = [
                     "The assembly falls silent",
 
                 background:
-                    "hastinapura-court"
+                    "stunned-assembly",
             },
 
 
@@ -247,7 +247,7 @@ const missions = [
                     "Draupadi stands before the Kuru assembly",
 
                 background:
-                    "hastinapura-court"
+                    "draupadi-summoned",
             },
 
 
@@ -295,7 +295,7 @@ const missions = [
                     "The elders remain troubled and silent",
 
                 background:
-                    "hastinapura-court"
+                    "troubled-elders",
             },
 
 
@@ -319,7 +319,7 @@ const missions = [
                     "Dhritarashtra intervenes in the royal assembly",
 
                 background:
-                    "hastinapura-court"
+                    "dhritarashtra-intervenes",
             },
 
 
@@ -343,7 +343,7 @@ const missions = [
                     "The second dice game seals the Pandavas' exile",
 
                 background:
-                    "hastinapura-court"
+                    "second-dice-game",
             },
 
 
@@ -367,7 +367,7 @@ const missions = [
                     "The Pandavas leave Hastinapura for exile",
 
                 background:
-                    "hastinapura-court"
+                    "pandavas-exile",
             }
 
         ],
