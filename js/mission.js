@@ -123,6 +123,15 @@ let currentText = "";
 
 let currentCharacterIndex = 0;
 
+let isTransitioning = false;
+
+
+/*
+ * Time between story scenes.
+ * 5000 milliseconds = 5 seconds.
+ */
+const SCENE_TRANSITION_DELAY = 1000;
+
 
 /* =========================
    TYPEWRITER
@@ -263,11 +272,6 @@ function displayCharacter(
             );
 
 
-    /*
-     * If the image cannot be found,
-     * show a fallback placeholder.
-     */
-
     characterImage.onerror =
         function () {
 
@@ -367,15 +371,6 @@ function displayCharacterScene(
     scene
 ) {
 
-    /*
-     * Tell CSS which character
-     * is currently speaking.
-     *
-     * CSS can use this character
-     * name for character-specific
-     * speech bubble positioning.
-     */
-
     sceneVisual.dataset.character =
         scene.character;
 
@@ -415,11 +410,6 @@ function displayCharacterScene(
 function displayNarratorScene(
     scene
 ) {
-
-    /*
-     * Remove character-specific
-     * positioning information.
-     */
 
     delete sceneVisual.dataset.character;
 
@@ -631,6 +621,83 @@ function completeStory() {
 
 
 /* =========================
+   SCENE TRANSITION
+========================= */
+
+function moveToNextScene() {
+
+    if (
+        isTransitioning ||
+        !selectedMission
+    ) {
+
+        return;
+    }
+
+
+    const lastScene =
+        currentSceneIndex >=
+        selectedMission.scenes.length - 1;
+
+
+    if (lastScene) {
+
+        completeStory();
+
+        return;
+    }
+
+
+    isTransitioning =
+        true;
+
+
+    /*
+     * Disable navigation while
+     * the story pauses.
+     */
+
+    nextButton.disabled =
+        true;
+
+
+    previousButton.disabled =
+        true;
+
+
+    nextButton.textContent =
+        "Entering next scene…";
+
+
+    /*
+     * Give the user a 5-second
+     * story transition.
+     */
+
+    setTimeout(
+        function () {
+
+            currentSceneIndex +=
+                1;
+
+
+            isTransitioning =
+                false;
+
+
+            nextButton.disabled =
+                false;
+
+
+            displayScene();
+
+        },
+        SCENE_TRANSITION_DELAY
+    );
+}
+
+
+/* =========================
    NEXT BUTTON
 ========================= */
 
@@ -638,7 +705,11 @@ nextButton.addEventListener(
     "click",
     function () {
 
-        if (!selectedMission) {
+        if (
+            !selectedMission ||
+            isTransitioning
+        ) {
+
             return;
         }
 
@@ -678,31 +749,11 @@ nextButton.addEventListener(
 
 
         /*
-         * Check final scene.
+         * Move to the next scene
+         * with the 5-second pause.
          */
 
-        const lastScene =
-            currentSceneIndex >=
-            selectedMission.scenes.length - 1;
-
-
-        if (lastScene) {
-
-            completeStory();
-
-            return;
-        }
-
-
-        /*
-         * Move forward.
-         */
-
-        currentSceneIndex +=
-            1;
-
-
-        displayScene();
+        moveToNextScene();
     }
 );
 
@@ -715,7 +766,11 @@ previousButton.addEventListener(
     "click",
     function () {
 
-        if (!selectedMission) {
+        if (
+            !selectedMission ||
+            isTransitioning
+        ) {
+
             return;
         }
 
@@ -767,7 +822,7 @@ previousButton.addEventListener(
 
 
         /*
-         * Move backward.
+         * Move backward immediately.
          */
 
         currentSceneIndex -=
