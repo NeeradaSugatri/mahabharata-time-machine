@@ -1,6 +1,8 @@
 const timelineContainer =
     document.getElementById("timeline-container");
 
+const backToMap =
+    document.getElementById("back-to-map");
 
 function createEventCard(event) {
 
@@ -72,7 +74,6 @@ function formatLocation(location) {
         );
 }
 
-
 function displayTimeline() {
 
     timelineContainer.innerHTML = "";
@@ -92,6 +93,76 @@ function displayTimeline() {
         timelineContainer.appendChild(card);
 
     });
+
+
+    /* =========================================
+       SELECT EVENT FROM URL
+    ========================================= */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const selectedEventId =
+        params.get("event");
+
+    const cameFromMap =
+    params.get("from") === "map";
+
+
+if (cameFromMap && backToMap) {
+
+    backToMap.hidden = false;
+
+}
+
+
+    if (!selectedEventId) {
+        return;
+    }
+
+
+    const selectedCard =
+        timelineContainer.querySelector(
+            `[data-event-id="${selectedEventId}"]`
+        );
+
+
+    if (!selectedCard) {
+        return;
+    }
+
+
+    const selectedEvent =
+        selectedCard.closest(
+            ".timeline-event"
+        );
+
+
+    if (!selectedEvent) {
+        return;
+    }
+
+
+    /* Highlight selected event */
+
+    selectedEvent.classList.add(
+        "selected"
+    );
+
+
+    /* Scroll selected event into view */
+
+    setTimeout(() => {
+
+        selectedEvent.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 100);
 
 }
 

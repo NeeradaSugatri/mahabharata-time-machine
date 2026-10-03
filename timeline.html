@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,18 +10,52 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Timeline | Mahabharata Time Machine</title>
+    <title>
+        Timeline | Mahabharata Time Machine
+    </title>
 
-    <link rel="stylesheet" href="css/timeline.css">
+    <link
+        rel="stylesheet"
+        href="css/timeline.css"
+    >
+
 </head>
+
 
 <body>
 
+
+    <!-- ========================================
+         TIMELINE HEADER
+    ========================================= -->
+
     <header class="timeline-header">
 
-        <a href="index.html" class="back-link">
+
+        <!-- Back to Home -->
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
             ← Home
         </a>
+
+
+        <!-- Back to Map
+             Hidden unless user came from Map -->
+
+        <a
+            href="map.html"
+            class="back-link map-back-link"
+            id="back-to-map"
+            hidden
+        >
+            ← Map
+        </a>
+
+
+        <!-- Header Title -->
 
         <div class="header-title">
 
@@ -38,10 +73,19 @@
 
         </div>
 
+
     </header>
 
 
+
+    <!-- ========================================
+         MAIN CONTENT
+    ========================================= -->
+
     <main>
+
+
+        <!-- Timeline Introduction -->
 
         <section class="timeline-intro">
 
@@ -61,14 +105,24 @@
         </section>
 
 
+
+        <!-- Timeline Events -->
+
         <section
             id="timeline-container"
             class="timeline-container"
         >
+
         </section>
+
 
     </main>
 
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
 
     <footer>
 
@@ -79,8 +133,15 @@
     </footer>
 
 
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
     <script src="js/data/events.js"></script>
+
     <script src="js/timeline.js"></script>
+
 
 </body>
 

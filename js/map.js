@@ -122,7 +122,7 @@ function openEvent(eventId) {
      */
 
     window.location.href =
-        `timeline.html?event=${encodeURIComponent(eventId)}`;
+    `timeline.html?event=${encodeURIComponent(eventId)}&from=map`;
 }
 
 

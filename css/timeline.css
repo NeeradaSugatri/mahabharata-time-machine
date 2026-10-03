@@ -26,7 +26,6 @@ body {
 
 
 /* Header */
-
 .timeline-header {
 
     padding: 30px 7%;
@@ -53,6 +52,12 @@ body {
     text-decoration: none;
 }
 
+
+.map-back-link {
+
+    left: calc(7% + 80px);
+
+}
 
 .eyebrow {
 
